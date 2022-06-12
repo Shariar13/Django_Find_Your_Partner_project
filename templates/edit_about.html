@@ -1,0 +1,436 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="http://fonts.cdnfonts.com/css/romantic" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/valeerie-morrie" rel="stylesheet">
+
+
+
+
+
+    <title>Home</title>
+
+    <style>
+        .nav_item {
+            margin-right: 73px;
+        }
+
+        .box_shadow {
+            background-image: linear-gradient(to right, #ffffb3, #ffe6e6);
+            height: 39px;
+
+
+        }
+
+        .nav {
+            -webkit-box-shadow: 1px 1px 5px 0px rgba(207, 207, 207, 1);
+            -moz-box-shadow: 1px 1px 5px 0px rgba(207, 207, 207, 1);
+            box-shadow: 1px 1px 5px 0px rgba(207, 207, 207, 1);
+
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #ffffb3, #ffe6e6);
+        }
+
+        .navs {
+            margin: auto;
+        }
+
+        .image_div {
+            margin-left: 73px;
+            width: 500px;
+        }
+
+        .image_div>img {
+            width: 500px;
+            border-radius: 19px;
+            clear: both;
+            float: left;
+        }
+
+        .text_div {
+            float: left;
+            margin-left: 29px;
+            width: 700px;
+        }
+
+        .text_div_2 {
+            float: left;
+            margin-right: 73px;
+        }
+
+        .text_style {
+            font-family: 'Winter', sans-serif;
+            font-size: 73px;
+            font-weight: lighter;
+        }
+
+        .button_style {
+            background-color: black;
+            border-radius: 19px;
+            color: white;
+            padding: 19px;
+            border: none;
+            font-weight: lighter;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 473px;
+            text-align: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            transition: 0.3s ease;
+
+        }
+
+        .button_style:hover {
+            width: 573px;
+            animation: chan-sh 6s ease infinite;
+            transform: translateX(0);
+        }
+
+        @import url('http://fonts.cdnfonts.com/css/romantic');
+        @import url('http://fonts.cdnfonts.com/css/valeerie-morrie');
+
+        body {
+            background: #DFC2F2;
+            background-image: linear-gradient(to right, #ffffb3, #ffe6e6);
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+<!-- rgb(250, 250, 250); -->
+
+
+{% if user.is_authenticated %}
+
+
+
+
+<body style="background-color: rgb(181, 255, 251);">
+
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-light nav fixed-top">
+        <div class="container-fluid box_shadow">
+            <a style="color: rgb(255, 0, 234); font-family: 'Valeerie Morrie', sans-serif; font-size: 39px;"
+                class="navbar-brand" href="/">Find Your
+                <span style="color: black;">Partner</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navs ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item nav_item">
+
+                        <a style="color: black ;text-decoration: none;font-family: 'Winter', sans-serif;"
+                            class="nav-link" aria-current="page" href="{% url 'home' %}"><i
+                                class="fas fa-home fa-2x"></i> Home</a>
+                    </li>
+                    <li class="nav-item nav_item">
+                        <a style="color: black ;text-decoration: none;font-family: 'Winter', sans-serif;"
+                            class="nav-link" aria-current="page" href="{% url 'chat_list' %}"><i class="fas fa-sms fa-2x"></i> Chat</a>
+                    </li>
+
+                    <li class="nav-item nav_item">
+                        <a style="color: black ;text-decoration: none;font-family: 'Winter', sans-serif;"
+                            class="nav-link" aria-current="page" href="/"><i class="fas fa-search fa-2x"></i> Find</a>
+                    </li>
+
+                    <li class="nav-item nav_item">
+                        <a style="color: black; border-bottom: 1px solid white;border-bottom: 5px solid black;text-decoration: none;font-family: 'Winter', sans-serif;"
+                            class="nav-link" aria-current="page" href="{% url 'user_profile' %}"><i
+                                class="fas fa-user-alt fa-2x"></i>
+                            Profile</a>
+                    </li>
+                </ul>
+
+                <ul style="margin: none;" class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+                    <li style="float: left;margin-top: 0px;" class="nav-item dropdown">
+                        {% if user.is_authenticated %}
+
+
+
+                    <li style="float: left;margin-top: 0px;" class="nav-item dropdown">
+                        <a style="color: black;text-decoration: none;" class="nav-link-user dropdown-toggle" href="#"
+                            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                            <span style="color: black;"> Sign in as {{ user.username }}</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'signout' %}">Sign out</a></li>
+
+                        </ul>
+                    </li>
+                    {% else %}
+                    <a style="color: whblackite ;" class="nav-link" aria-current="page" href="{% url 'signin' %}"><i
+                            class="fas fa-user-circle fa-2x"></i>
+                        <span style="color: black;font-family: 'Winter', sans-serif;"> Signup/Signin</span>
+                    </a>
+
+                    {% endif %}
+
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="">Sign out</a></li>
+
+                    </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- nav -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    
+    <div style="width: 73%;margin: auto;">
+        <form action = "{% url 'about_form' %}" method = "POST">
+
+            <div style="text-align:center;">
+                {% for message in messages %}
+          
+          
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                  <strong>Warning !</strong>{{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+          
+                {% endfor %}
+             
+              </div>
+            {% csrf_token %}
+            <input name="name" type="hidden" value="{{ user.get_full_name }}">
+            <input name="username" type="hidden" value="{{ user.username }}">
+            <p><b>Name</b></p>
+            <label>{{ user.get_full_name }}</label>
+            <br>
+            <br>
+            <p><b>Username</b></p>
+            <label>{{ user.username }}</label>
+            <br>
+            <br>
+            <p><b>Height</b></p>
+            <input name="height">
+            <p><b>Weight</b></p>
+            <input name="weight">
+            <p><b>Eyes</b></p>
+            <input name="eyes">
+            <p><b>Hair</b></p>
+            <input name="hair">
+            <p><b>Education</b></p>
+            <input name="education">
+            <br>
+            <br>
+<label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+              <br>
+              <br>
+
+
+
+
+            <p><b>Phone</b></p>
+            <input name="phone">
+            <p><b>Email</b></p>
+            <input name="email">
+            <p><b>Description</b></p>
+            <input name="description">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+{% else %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="{% static 'fontawesome/CSS/all.CSS' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/CSS/all.CSS' %}">
+    <title>Login</title>
+
+    <style>
+        body {
+            background: white;
+
+
+
+        }
+
+        .nav-bar-menu>ul>li {
+            margin-left: 70px;
+        }
+
+        .nav-bar-menu>ul>li:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .nav-bar-menu>ul>li:active {
+            border-bottom: 1px solid black;
+
+        }
+
+
+        .login_area {
+            color: #28c2eb;
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .login_area img {
+            width: 50%;
+        }
+
+        .login_area input[type="text"],
+        .login_area input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 1px auto;
+            text-align: center;
+            border: 1px solid #28c2eb;
+            padding: 10px 10px;
+            width: 200px;
+            outline: none;
+            border-radius: 25px;
+            transition: .50s;
+        }
+
+
+        .login_area input[type="text"]:focus,
+        .login_area input[type="password"]:focus,
+        .box input[type="password"] {
+            width: 280px;
+            border-color: black;
+        }
+
+        .login_area input[type="submit"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 1px auto;
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px 5px;
+            width: 150px;
+            outline: none;
+            border-radius: 25px;
+            transition: 0.30s;
+            cursor: pointer;
+        }
+
+        .login_area input[type="submit"]:hover {
+            background: #28c2eb;
+            color: white;
+            border: none;
+        }
+
+        .login_area input[type="submit"]:focus,
+        .box input[type="password"] {
+            width: 280px;
+            border-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="{% url 'signin' %}" class="login_area" method="post">
+        {% csrf_token %}
+        <div style="text-align:center;">
+            {% for message in messages %}
+
+
+            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong>Warning !</strong>{{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div style="width: auto;">
+            <img src="{% static 'img/logo.png' %}" style="width: 200px;" alt="">
+        </div>
+        <br>
+        <br>
+        <p style="font-size:29px;margin-bottom:29px;">Sign in</p>
+        <input type="text" name="name" placeholder="Username">
+        <br><br>
+        <input type="password" name="password" placeholder="Password">
+        <br><br>
+        <input type="submit" value="Sign in"><br>
+        <a style="text-decoration: none;color: #28c2eb;" href="{% url 'signup' %}">
+            Don't have an account?Create from here.</a>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+
+
+</html>
+
+{% endif %}
+
+</html>
